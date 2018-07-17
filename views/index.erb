@@ -1,0 +1,25 @@
+<h1>This is the Homepage</h1>
+
+<h2>Here are the Available Surveys:</h2>
+<% if @surveys.any? %>
+           <ul>
+             <% @surveys.each() do |survey| %>
+               <li><a href="/surveys/<%= survey.id()%>"><%= survey.title() %></a> </li>
+             <% end %>
+           </ul>
+         <% else %>
+             <p>There are no surveys yet!</p>
+         <% end %>
+
+<form class="" action="/" method="post">
+  <label for="person_name">Enter Your Name:</label>
+  <input type="text" name="person_name">
+  <button type="submit"  class="btn btn-info"name="button">Add person</button>
+</form>
+<br>
+<h2>Make a New Survey</h2>
+<form class="" action="/" method="post">
+  <label for="survey_title">Survey Title:</label>
+  <input type="text" name="survey_title">
+  <button type="submit"  class="btn btn-info"name="button">Add Survey</button>
+</form>
